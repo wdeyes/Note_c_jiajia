@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
 	vector<int> nums(13); //0~12共13个数，都是0
 	vector<int> counts(10); // 0~9共10个数，都是0
 	for(int i=0; i<13; ++i){
-		cin >> nums[i]; // 可以直接输入
+		cin >> nums[i]; // 可以直接输入，记住
 		++counts[nums[i]];
 	}
 	bool isHu=false;
