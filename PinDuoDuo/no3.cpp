@@ -12,7 +12,7 @@ using namespace std;
 // dp[n][s]分为两种情况，第一位是1和第一位不是1的，
 // 是1的：全部拿走1，情况种类和n-1位和为s-n的一样；
 // 不是1的：全部拿走1，情况种类和n位，和为s-n的一样；
-// dp[n][s]=dp[n-1][s-n]+dp[n][s-n]
+// dp[n][s] = dp[n-1][s-n] + dp[n][s-n]
 
 int main(int argc, char const *argv[])
 {

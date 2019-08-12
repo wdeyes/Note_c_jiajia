@@ -7,8 +7,8 @@
 using namespace std;
 
 //从最后一位开始递归的找
-
-
+// 后来看到网上有从第一位开始递归也可以，就是不传入end，传入start，下一位的范围是 start<=i<=s/n
+ 
 int core(int n, int s, int end){
     if(s<=0)
         return 0;
