@@ -6,7 +6,8 @@ using namespace std;
 template<typename T> 
 class CircularQueue{
 public:
-	CircularQueue(unsigned int max_size): max_size(max_size), m_front(0), m_rear(0){
+	CircularQueue(unsigned int max_size_usr): max_size(max_size_usr + 1), m_front(0), m_rear(0){
+		// max_size_usr要加1传入，因为循环队列要空余一个，用来区分满和空
 		m_data = new T[max_size];
 	}
 	~CircularQueue(){
@@ -57,10 +58,13 @@ void CircularQueue<T>::batch_emove(unsigned int num_del){
 
 	//计算队列中有元素的长度
 	int len;
-	if(m_front>m_rear)
-		len=m_rear+max_size-m_front;
-	else
-		len=m_rear-m_front;
+	// if(m_front>m_rear)
+	// 	len=m_rear+max_size-m_front;
+	// else
+	// 	len=m_rear-m_front;
+	// 可以合并
+	len = (m_rear-m_front+max_size)%max_size;
+
 	// 弹出
 	if(num_del>len){
 		m_front=m_rear;
@@ -82,10 +86,12 @@ int main(int argc, char const *argv[])
 		circ_que.batch_emove(3);
 		circ_que.push_back(5);
 
-		//circ_que.push_back(1);
+		circ_que.push_back(1);
 		circ_que.push_back(2);
 		circ_que.push_back(3);
 		circ_que.push_back(4);
+		//circ_que.push_back(4);
+
 		circ_que.pop_front();
 		circ_que.batch_emove(3);
 		circ_que.push_back(5);
