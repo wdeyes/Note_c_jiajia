@@ -14,5 +14,6 @@ int main(){
 	cout << bitset<sizeof(int)*8>(x) << endl;
 	cout << hex << x << endl;
     cout << pow(2,16) << endl;
+	cout << "long's size: " << sizeof(long) << endl;
 	return 0;
 }
