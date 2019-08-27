@@ -1,3 +1,2 @@
-# 笔试题目见8月3日手机相册
-https://www.nowcoder.com/discuss/216237
-答案网址如上
+8月3日笔试
+牛客发布参考答案 https://www.nowcoder.com/discuss/216237
