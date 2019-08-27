@@ -5,7 +5,7 @@
 using namespace std;
 
 // 题目要求要稳定排序，所以边放到map中，边放到vector中，最后对vector排序，注意要使用stable_sort进行稳定排序，
-// 用map查找快，用vector是排序用，map会打乱输入的顺序
+// 用map查找快，用vector是排序用，map会打乱输入的顺序（可以看 test.cpp）
 // sort 函数是主要用快排，结合了插入排序和堆排序，属于不稳定排序
 /* 输入：
 19
