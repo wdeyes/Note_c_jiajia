@@ -3,6 +3,8 @@
 #include <climits>
 using namespace std;
 
+// 有n件商品，恰好花完v，最少买几件
+
 int main(int argc, char const *argv[])
 {
 	int n;
