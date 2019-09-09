@@ -2,21 +2,34 @@
 using namespace std;
 
 //处理一行，分割字符串，去掉空格，等号，加号，将其余元素存到 part 中
+// vector<string> deal(string str){
+// 	vector<string> part;
+// 	int len = str.size();
+// 	for(int i=0; i<len; ++i){
+// 		//去掉空格
+// 		while(i<len && str[i]==' ') ++i;
+// 		int start = i;
+// 		while(i<len && (str[i]!='=' && str[i]!='+') ) ++i;
+// 		int end = i;
+// 		//空格回退
+// 		while(str[end-1]==' ') --end;
+// 		string temp = str.substr(start, end-start);//substr（开始，长度）
+// 		part.push_back(temp);
+// 	}
+// 	return part;
+// }
+
 vector<string> deal(string str){
-	vector<string> part;
-	int len = str.size();
-	for(int i=0; i<len; ++i){
-		//去掉空格
-		while(i<len && str[i]==' ') ++i;
-		int start = i;
-		while(i<len && (str[i]!='=' && str[i]!='+') ) ++i;
-		int end = i;
-		//空格回退
-		while(str[end-1]==' ') --end;
-		string temp = str.substr(start, end-start);//substr（开始，长度）
-		part.push_back(temp);
-	}
-	return part;
+    for(auto & val : str)
+        if(val=='=' || val=='+')
+            val = ' ';
+
+    vector<string> part;
+    stringstream ss(str);
+    string temp;
+    while(ss >> temp)
+        part.push_back(temp);
+    return part;
 }
 
 //计算一行,从第二个元素开始进行累加，结果赋给 ans
