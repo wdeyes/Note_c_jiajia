@@ -19,6 +19,8 @@ using namespace std;
 // 	return part;
 // }
 
+
+//改用流处理方便许多
 vector<string> deal(string str){
     for(auto & val : str)
         if(val=='=' || val=='+')
@@ -33,7 +35,7 @@ vector<string> deal(string str){
 }
 
 //计算一行,从第二个元素开始进行累加，结果赋给 ans
-bool calc(vector<string> &part, unordered_map<string, int> &data, int &ans){
+bool calc(const vector<string> &part, unordered_map<string, int> &data, int &ans){
 	int len = part.size();
 	ans = 0;
 	for(int i=1; i<len; ++i){
